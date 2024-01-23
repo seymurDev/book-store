@@ -1,0 +1,172 @@
+.navbar::after {
+  content: none;
+}
+.navbar::before {
+  content: none;
+}
+
+/* search */
+
+.searchMain {
+  padding-top: 140px;
+  background: var(--light);
+}
+.searchBox {
+  padding-left: 30px;
+}
+.searchH2 {
+  color: var(--braun);
+  font-family: montserrat;
+  font-size: 36px;
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+.searchBox form input {
+  border-radius: 5px;
+  border: 1px solid var(--grey);
+  background: var(--white);
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+  padding: 16px;
+  transition: 0.3s ease-in-out;
+  margin-top: 14px;
+}
+.searchBox form input:focus {
+  outline: 1px solid var(--orange);
+  box-shadow: 0px 0 20px 1px var(--orange);
+  transform: scale(1.1);
+}
+.searchBox form button {
+  width: 100%;
+  border-radius: 5px;
+  background: var(--orange);
+  border: 1px solid var(--orange);
+  padding: 10px;
+  color: var(--white);
+  font-family: var(--crimson);
+  font-size: 30px;
+  transition: 0.3s ease-in-out;
+}
+.searchBox form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 20px 30px 1px var(--orange);
+  background: transparent;
+  color: var(--orange);
+}
+
+/* slider */
+
+.carousel{
+  padding: 50px;
+  background: white;
+  margin: 0 100px;
+}
+.carousel-inner .carousel-item {
+  /* padding: 0 100px; */
+
+}
+.carouselResBtn{
+  display: none !important;
+}
+.carouselBox{
+  /* min-height: 300px; */
+  /* max-height: 500px;  */
+}
+
+.carouselBox img{
+  /* width: 30%; */
+}
+.carousel #leftIcon{
+  margin-right: 200px;
+}
+.carousel #rightIcon{
+  margin-left: 200px;
+}
+.book-about {
+  padding: 40px 20px;
+}
+.book-name {
+  color: var(--braun);
+  font-family: var(--montserrat);
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+.book-writer {
+  color: var(--braun);
+  font-family: var(--montserrat);
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+.about-the-book {
+  height: 200px;
+  color: var(--braun);
+  font-family: var(--montserrat);
+  font-size: 14px;
+  line-height: 196.187%;
+  overflow-y: auto ;
+  padding-right: 10px;
+}
+.about-the-book::-webkit-scrollbar{
+  width: 4px;
+}
+.about-the-book::-webkit-scrollbar-track{
+  background: #ccc;
+}
+.about-the-book::-webkit-scrollbar-thumb{
+  background: var(--orange);
+}
+
+
+
+/* responsive */
+
+@media only screen and (max-width: 992px) {
+  .searchBox {
+    padding-left: 0;
+  }
+  .resWrap {
+    flex-wrap: wrap;
+  }
+  /* slider */
+  .carousel{
+    margin: 20px;
+    background: transparent;
+  }
+  .carousel #rightIcon{
+    margin-left: 0;
+  }
+  .carousel #leftIcon{
+    margin-right: 0;
+  }
+  .carouselBox{
+    flex-wrap: wrap;
+    height: 800px;
+  }
+  .carouselBox img{
+    width: 300px;
+  }
+  .carouselBox p{
+    overflow: auto;
+  }
+  .carouselBtn{
+    display: none;
+  }
+  .carouselResBtn{
+    display: block !important; 
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  .carouselResBtn i{
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  .carouselResBtn button{
+    background: transparent;
+    border: none;
+  }
+}

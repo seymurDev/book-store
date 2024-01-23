@@ -1,0 +1,23 @@
+@import url(./font.css);
+
+
+:root {
+  --montserrat: "Montserrat", sans-serif;
+  --roboto: "Roboto', sans-serif";
+  --crimson: "Crimson Text", serif;
+  --white: #ffffff;
+  --dark: #000000;
+  --braun: #241400;
+  --light_braun: #391f00;
+  --orange: #e16a00;
+  --grey: #cecece;
+  --dark_grey: #333333;
+  --main-red: #720418;
+  --yellow: #ff8b00;
+  --light: #fffaf5;
+  --main_grey: #F2F2F2;
+  --placeHolder: #797667;
+  --border:#CECECE;
+}
+
+

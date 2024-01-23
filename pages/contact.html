@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/scrollToTop.css">
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!------------------ Start Header ----------------------->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog pt-5">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal_content modal_inner_div">
+              <form>
+                <p>Join Us</p>
+                <input
+                  id="joinUsFullname"
+                  type="text"
+                  placeholder="Fullname"
+                  required
+                />
+                <input
+                  id="joinUsEmail"
+                  type="email"
+                  placeholder="E-mail"
+                  required
+                />
+                <button type="submit" id="join">Join</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- header for responsive -->
+    <section class="navbarResponsive" id="responsiveNav">
+      <div class="navbarResponsiveContent">
+        <span class="close" id="closeResponsiveNav">&times;</span>
+        <ul class="responsiveNavUll">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./catalog.html">Catalog</a></li>
+          <li><a href="./about.html">About Store</a></li>
+          <li><a href="./contact.html" class="nav_active_li">Contact Us</a></li>
+          <li><a href="./search.html">Search</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- header -->
+    <header class="navbar">
+      <div class="logo_div">
+        <a href="../index.html"
+          ><img src="../assets/icons/logo.svg" alt="logo"
+        /></a>
+      </div>
+
+      <div class="list_div">
+        <ul class="nav_items">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./catalog.html">Catalog</a></li>
+          <li><a href="./about.html">About Store</a></li>
+          <li><a href="./contact.html" class="nav_active_a">Contact Us</a></li>
+          <li><a href="./search.html">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="join_div">
+        <button
+          class="pb-2"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <img src="../assets/icons/adminProfile.svg" alt="personal_icon" />
+        </button>
+
+        <button
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          id="joinUsBtn"
+        >
+          Join Us
+        </button>
+        <button id="hamburgerMenu">
+          <img
+            id="humburger"
+            src="../assets/icons/hamburgerAdmin.svg"
+            alt="hamburger"
+          />
+        </button>
+      </div>
+    </header>
+    <!------------------ End Header ----------------------->
+    <!------------------ Start Main ----------------------->
+    <main class="contactMain">
+      <section class="contact_section">
+        <h2>Contact Us</h2>
+        <div class="input_family">
+          <div class="inputs">
+            <input
+              type="text"
+              name=""
+              id="contact_fullname"
+              placeholder="Full Name"
+              class="contact_input"
+            />
+            <input
+              type="email"
+              name="email"
+              id="contact_email"
+              placeholder="Email"
+              class="contact_input"
+            />
+          </div>
+          <div class="inputs">
+            <input
+              type="text"
+              name=""
+              id="contact_adress"
+              placeholder="Address"
+              class="contact_input"
+            />
+            <input
+              type="tel"
+              name=""
+              id="contact_phone"
+              placeholder="Phone"
+              class="contact_input input_phone"
+            />
+          </div>
+          <!-- <div><input type="text" name="" id="contact_note" placeholder="Note" class="input_message"></div> -->
+          <div>
+            <textarea
+              class="textareaNote"
+              id="contact_note"
+              name=""
+              placeholder="Note"
+              cols="30"
+              rows="5"
+            ></textarea>
+          </div>
+        </div>
+        <div class="send_btn"><button id="send_btn">Send</button></div>
+      </section>
+    </main>
+    <!------------------ End Main ----------------------->
+    <!------------------ Start Footer ----------------------->
+    <footer class="footer">
+      <section class="footerIconsBox">
+        <p>Follow us on social media</p>
+        <div class="footerIcons">
+          <a href="https://www.facebook.com/"
+            ><i id="facebook" class="fa-brands fa-facebook fa-5x"></i
+          ></a>
+          <a href="https://www.twitter.com/"
+            ><i id="twitter" class="fa-brands fa-twitter fa-5x"></i
+          ></a>
+          <a href="https://www.instagram.com/"
+            ><i id="instagram" class="fa-brands fa-instagram fa-5x"></i
+          ></a>
+        </div>
+      </section>
+      <section class="footerBoxes">
+        <div class="footerLogo">
+          <a href="../index.html">
+            <img src="../assets/icons/logoWhite.svg" alt="logo" />
+          </a>
+          <div class="footer_logo_title">
+            <h5>LIBRARY</h5>
+            <hr />
+            <h6>BOOK STORE</h6>
+          </div>
+        </div>
+        <!-- for responsive -->
+        <ul class="footer_nav_items">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./catalog.html">Catalog</a></li>
+          <li><a href="./about.html">About Store</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+          <li><a href="./search.html">Search</a></li>
+        </ul>
+        <!-- --------------- -->
+        <div class="footer_items_container">
+          <div class="footer_popular_items">
+            <ul>
+              <span class="footer_items_title">Popular</span>
+              <li>Programming</li>
+              <li>Books for children</li>
+              <li>Psychology</li>
+              <li>Business</li>
+            </ul>
+          </div>
+
+          <div class="footer_cash_items">
+            <ul>
+              <span class="footer_items_title">Cash</span>
+              <li>Delivery</li>
+              <li>Payment</li>
+              <li>About the store</li>
+            </ul>
+          </div>
+
+          <div class="footer_help_items">
+            <ul>
+              <span class="footer_items_title">Help</span>
+              <li>Contacts</li>
+              <li>Purchase returns</li>
+              <li>Buyer help</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer_contact_div">
+          <p>+38 (071) 339-16-26</p>
+          <a href="tel:+ 38 (071) 339-16-26 ">Request a call</a>
+        </div>
+      </section>
+      <div class="copywriter_text">
+        All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy
+      </div>
+    </footer>
+    <!------------------ End Footer ----------------------->
+
+    <!-- scroll to top -->
+    <div class="isShowBtn">
+      <i class="fas fa-long-arrow-alt-up"></i>
+    </div>
+
+    <script src="../js/scrollToTop.js"></script>
+    <!-- scroll to top -->
+
+    <!-- Join Us Script start -->
+
+    <script src="../js/config_DB.js"></script>
+    <script type="module" src="../js/joinUs.js"></script>
+
+    <!-- Join Us Script end -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/humburger.js"></script>
+  </body>
+  <script src="../js/config_DB.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+    import {
+      getDatabase,
+      ref,
+      set,
+      onValue,
+      push,
+    } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    const send_btn = document.getElementById("send_btn");
+
+    send_btn?.addEventListener("click", function (e) {
+      e.preventDefault();
+      let contact_fullname = document
+        .getElementById("contact_fullname")
+        .value.trim();
+      let contact_email = document.getElementById("contact_email").value.trim();
+      let contact_adress = document
+        .getElementById("contact_adress")
+        .value.trim();
+      let contact_phone = document.getElementById("contact_phone").value.trim();
+      let contact_note = document.getElementById("contact_note").value.trim();
+
+      if (
+        !contact_fullname ||
+        !contact_email ||
+        !contact_adress ||
+        !contact_phone
+      ) {
+        alert("Please fill in all fields!");
+      } else {
+        const contactData = {
+          fullName: contact_fullname,
+          email: contact_email,
+          adress: contact_adress,
+          phone: contact_phone,
+          note: contact_note,
+        };
+
+        push(ref(db, "contact"), contactData);
+        document.getElementById("contact_fullname").value = "";
+        document.getElementById("contact_email").value = "";
+        document.getElementById("contact_adress").value = "";
+        document.getElementById("contact_phone").value = "";
+        document.getElementById("contact_note").value = "";
+        alert("successful");
+      }
+    });
+  </script>
+</html>

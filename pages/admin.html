@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store/admin</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../css/scrollToTop.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- <div id="adminlogin">
+        <img id="logo" src="../assets/images/adminLoginLogo.svg"/>
+        <div id="loginform">
+            <p id="formtitle">Welcome Admin</p>
+            <input class="forminput" placeholder="Username"/>
+            <input class="forminput" placeholder="Password"/>
+            <button id="signBtn">Sign in</button>
+        </div>
+    </div> -->
+    <div id="adminPanel">
+        <div class="nav1">
+            <img id="navLogo" src="../assets/images/adminNavLogo.svg"/>
+            <ul >
+                <li class="navLink">
+                    <img class="navIcon" src="../assets/icons/navIcon.svg"/>
+                    <a href="#" class="navItem">Home</a>
+                </li>
+                <li class="navLink">
+                    <img class="navIcon" src="../assets/icons/navIcon.svg"/>
+                    <a href="#booksection"  class="navItem">Books</a>
+                </li>
+                <li class="navLink">
+                    <img class="navIcon" src="../assets/icons/navIcon.svg"/>
+                    <a href="#aboutSection"  class="navItem">About</a>
+                </li>
+                <li class="navLink">
+                    <img class="navIcon" src="../assets/icons/navIcon.svg"/>
+                    <a href="#joinUsSection" class="navItem">Join Us</a>
+                </li>
+                <li class="navLink">
+                    <img class="navIcon" src="../assets/icons/navIcon.svg"/>
+                    <a href="#contactSection" class="navItem">Contact</a>
+                </li>
+                <li class="navLink">
+                    <img class="navIcon" src="../assets/icons/navIcon.svg"/>
+                    <a href="#" class="navItem">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <div class="category-modalDiv">
+            <div class="category-modal">
+                <div class="formSection">
+                    <label for="book_category">Add Category</label>
+                    <input type="text" id="book_category">
+                    <button id="addCategoryBtn" class="addBtn">Add Category</button>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <nav class="nav2">
+                <img class="resLogo" src="../assets/icons/resLogoAdmin.svg" alt="">
+                <img onclick="openNav()" class="hamBar" src="../assets/icons/hamburgerAdmin.svg" alt="">
+            </nav>
+            <div id="myNav" class="overlay">
+                <div id="redZone">
+                    <div class="overlayHead">
+                        <img class="hamLogo" src="../assets/icons/hambarLogo.svg" alt="">
+                        <img class="closeBtn" onclick="closeNav()" src="../assets/icons/admincloseBtn.svg" alt="">
+                    </div>
+                    <div class="overlay-content">
+                        <ul class="hamList">
+                            <li class="hamLink">
+                                <img class="navIcon" src="../assets/icons/hamIcon.svg"/>
+                                <a href="#" class="hamItem">Home</a>
+                            </li>
+                            <li class="hamLink">
+                                <img class="navIcon" src="../assets/icons/hamIcon.svg"/>
+                                <a href="#" class="hamItem">Books</a>
+                            </li>
+                            <li class="hamLink">
+                                <img class="navIcon" src="../assets/icons/hamIcon.svg"/>
+                                <a href="#" class="hamItem">About</a>
+                            </li>
+                            <li class="hamLink">
+                                <img class="navIcon" src="../assets/icons/hamIcon.svg"/>
+                                <a href="#" class="hamItem">Join Us</a>
+                            </li>
+                            <li class="hamLink">
+                                <img class="navIcon" src="../assets/icons/hamIcon.svg"/>
+                                <a href="#" class="hamItem">Contact</a>
+                            </li>
+                            <li class="hamLink">
+                                <img class="navIcon" src="../assets/icons/hamIcon.svg"/>
+                                <a href="#" class="hamItem">Log Out</a>
+                            </li>
+                        </ul>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="adminProfile">
+                <img class="profileImg" src="../assets/icons/adminProfile.svg" alt="profile">
+                <p class="profileTitle">Admin</p>
+            </div>
+            <div>
+                <p class="addTitle">Add Book</p>
+                <p class="searchTitle">Search book</p>
+                <div class="search">
+                    <div class="searchBar">
+                        <input id="searchInput" class="searchInput" type="text">
+                        <button class="searchBtn"><img class="searchIcon" src="../assets//icons/search.svg" alt=""></button>
+                    </div>
+                    <div class="suggBox">
+                        <div class="suggItem">
+                        </div>
+                    </div>
+                </div>
+                <p id="booksection" class="bookFormTitle">Book form</p>
+                <form class="bookForm">
+                    <div class="formSection">
+                        <label for="book_name">Book Name</label>
+                        <input type="text" id="book_name">
+                    </div>
+                    <div class="formSection">
+                        <label for="author_name">Author Name</label>
+                        <input type="text" id="author_name">
+                    </div>
+                    <div class="formSection">
+                        <label for="img_url">Book Image URL</label>
+                        <input type="text" id="img_url">
+                    </div>
+                    <div class="formSection">
+                        <label for="description">Description</label>
+                        <input type="text" id="description">
+                    </div>
+                    <div class="formSection">
+                        <label for="pub_year">Publication Year</label>
+                        <input type="number" id="pub_year">
+                    </div>
+                    <div class="checkSection">
+                        <input type="checkbox" id="isNew" name="isNew" value="yes">
+                        <label for="isNew">New</label>
+                    </div>
+                    <div class="formSection">
+                        <label for="type_selection">Book Type <img id="plus_btn" src="../assets/icons/plus_button.png" alt=""></label>
+                        <select id="type_selection">
+                            <!-- <option value="">none</option>
+                            <option value="">salam1</option>
+                            <option value="">salam2</option>
+                            <option value="">salam3</option> -->
+                        </select>
+                    </div>
+                    <button id="bookFormBtn" class="addBtn">Add</button>
+                </form>
+                <p id="aboutSection" class="aboutFormTitle">About Store</p>
+                <form class="aboutForm">
+                    <div class="formSection">
+                        <label for="about_title">Title</label>
+                        <input type="text" id="about_title">
+                    </div>
+                    <div class="formSection">
+                        <label for="about_img_url">Book Image URL</label>
+                        <input type="text" id="about_img_url">
+                    </div>
+                    <div class="formSection">
+                        <label for="about_description">Description</label>
+                        <input type="text" id="about_description">
+                    </div>
+                    <button id="aboutFormBtn" class="addBtn">Add About Info</button>
+                </form>
+                <p id="joinUsSection" class="joinUsTitle">Join Us</p>
+                <table class="joinTable">
+                    <thead>
+                        <tr class="joinTr">
+                            <th class="joinTh">#</th>
+                            <th class="joinTh">Full Name</th>
+                            <th class="joinTh">Email Adress</th>
+                        </tr>
+                    </thead>
+                    <tbody class="joinTb">
+
+                    </tbody>
+                </table>
+                <p id="booksSection" class="booksTitle">Books</p>
+                <table class="booksTable">
+                    <thead>
+                        <tr class="booksTr">
+                            <th class="booksTh">#</th>
+                            <th class="booksTh">Title</th>
+                            <th class="booksTh">Description</th>
+                            <th class="booksTh">Category</th>
+                            <th class="booksTh">Author</th>
+                        </tr>
+                    </thead>
+                    <tbody class="booksTb">
+
+                    </tbody>
+                </table>
+                <p id="contactUsSection" class="contactTitle">Contact Us</p>
+                <table class="contactTable">
+                    <thead>
+                        <tr class="contactTr">
+                            <th class="contactTh">#</th>
+                            <th class="contactTh">Full Name</th>
+                            <th class="contactTh">Address</th>
+                            <th class="contactTh">Email Address</th>
+                            <th class="contactTh">Phone Number</th>
+                        </tr>
+                    </thead>
+                    <tbody class="contactTb">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+ <!-- scroll to top -->
+ <div class="isShowBtn">
+    <i class="fas fa-long-arrow-alt-up"></i>
+  </div>
+
+  <script src="../js/scrollToTop.js"></script>
+  <!-- scroll to top -->
+</body>
+<script defer src="../js/responsive.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="../js/config_DB.js"></script>
+<script type="module">
+    const searchInput= document.querySelector('#searchInput')
+    const suggBox=document.querySelector('.suggBox')
+    const searchBtn=document.querySelector('.searchBtn')
+    const bookName= document.getElementById('book_name')
+    const authorName= document.getElementById('author_name')
+    const bookImgUrl=document.getElementById('img_url')
+    const bookDesc=document.getElementById('description')
+    const typeSelection=document.getElementById('type_selection')
+    const bookType=document.getElementById('book_category')
+    const publicationYear=document.getElementById('pub_year')
+    const isNew=document.getElementById('isNew');
+    const categoryModalDiv=document.querySelector('.category-modalDiv')
+    const openModalBtn=document.getElementById('plus_btn')
+    const addCategoryBtn=document.getElementById('addCategoryBtn')
+    const bookFormBtn=document.getElementById('bookFormBtn')
+    const aboutTitle=document.getElementById('about_title')
+    const aboutImgUrl=document.getElementById('about_img_url')
+    const aboutDescription=document.getElementById('about_description')
+    const aboutFormBtn=document.getElementById('aboutFormBtn')
+
+    const booksTb= document.querySelector('.booksTb')
+    const joinTb= document.querySelector('.joinTb')
+    const contactTb= document.querySelector('.contactTb')
+
+    searchBtn.addEventListener('click',searchBooks)
+    aboutFormBtn.addEventListener('click',addAboutDataToDb)
+    function selectOptionByCategory(categoryValue) {
+        for (var i = 0; i < typeSelection.options.length; i++) {
+            if (typeSelection.options[i].value == categoryValue) {
+                openModalBtn.classList.add='dNone'
+                typeSelection.selectedIndex = i;
+                break;
+            }else{
+                bookType.value= categoryValue?categoryValue:'unknown'
+            }
+        }
+    }
+    function generateRandomCode(length) {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let randomCode = '';
+        for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            randomCode += characters.charAt(randomIndex);
+        }
+        
+        return randomCode;
+}
+    function searchBooks() {
+        let inputValue = searchInput.value;
+        var apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${inputValue}`;
+        if(inputValue.trim()!==''){
+            fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                suggBox.style.display='block'
+                suggBox.innerHTML=''
+                data.items.forEach((item) => {
+                    const bookTitle = item.volumeInfo.title;
+                    const bookID=item.id
+                    const bookAuthorName = item.volumeInfo.authors;
+                    const bookDescription = item.volumeInfo.description;
+                    const bookYearSTR= item.volumeInfo.publishedDate;
+                    const bookYear=bookYearSTR?.slice(0,4);
+                    const bookImgLink= item.volumeInfo.imageLinks?.smallThumbnail;
+                    const bookCategory = item.volumeInfo.categories;
+                    const suggItem=document.createElement('div');
+                    
+                    suggItem.classList.add('suggItem')
+                    suggItem.style.cursor = "pointer";
+                    suggItem.innerHTML=
+                    `
+                    <img src="../assets/icons/clock.svg" alt="">
+                    <p class="suggTitle"> ${bookTitle} , ${bookAuthorName?bookAuthorName:'unknown author'}</p>
+                    `
+                    suggBox.appendChild(suggItem)
+                    suggItem.addEventListener('click',()=>{
+                        for (var i = 0; i < typeSelection.options.length; i++) {
+                            if (typeSelection.options[i].value === 'none') {
+                                typeSelection.selectedIndex = i;
+                                break;
+                            }
+                        }
+                        selectOptionByCategory(bookCategory)
+                        bookName.value=bookTitle?bookTitle:'';
+                        authorName.value=bookAuthorName?bookAuthorName:'';
+                        bookDesc.value=bookDescription?bookDescription:'';
+                        bookImgUrl.value=bookImgLink?bookImgLink:'';
+                        publicationYear.value=bookYear?bookYear:'';
+                        localStorage.setItem('bookCode',bookID?bookID:generateRandomCode(12))
+                        if (parseInt(publicationYear.value) >= 2020) {
+                            isNew.checked = true;
+                        } else {
+                            isNew.checked = false;
+                        }
+                        suggBox.style.display='none'
+                        suggBox.innerHTML=''
+                        searchInput.value=''
+                    })
+
+            })
+                        
+            })
+            .catch(error => console.log('Error:', error));
+        }
+    }
+    categoryModalDiv.addEventListener('click',function(e){
+        if(e.target.className==='category-modalDiv'){
+            categoryModalDiv.style.display='none'
+        }
+    })
+    addCategoryBtn.addEventListener('click',function(){
+        if(bookType.value!==''){
+            categoryModalDiv.style.display='none'
+            typeSelection.innerHTML+= `<option selected value="">${bookType.value}</option>`
+        }
+    })
+    openModalBtn.addEventListener('click',function(){
+        categoryModalDiv.style.display='block'
+    })
+    bookFormBtn.addEventListener('click',addBookDataToDb)
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js"
+    import {getDatabase, ref, set,onValue, push} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js"
+    const app=initializeApp(firebaseConfig)
+    const db = getDatabase(app);
+    function addBookDataToDb(e){
+        if(bookName.value!==''){
+            e.preventDefault()
+            let selectedOptions= typeSelection.options[typeSelection.selectedIndex]
+            let bookData={
+                title: bookName.value,
+                author: authorName.value,
+                description: bookDesc.value,
+                bookImage: bookImgUrl.value,
+                publishYear:publicationYear.value,
+                category:selectedOptions.innerText,
+                bookCode:localStorage.getItem('bookCode'),
+                new: isNew.checked
+                
+            }
+            set(ref(db, 'books/' + bookData.bookCode), bookData);
+            set(ref(db, 'category/'+ bookData.category), bookData.category);
+            Toastify({
+                text: "Added Successfully to DataBase",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+            }).showToast();
+            openModalBtn.classList.remove='dNone'
+            localStorage.removeItem('bookCode');
+            for (var i = 0; i < typeSelection.options.length; i++) {
+                if (typeSelection.options[i].value === 'none') {
+                    typeSelection.selectedIndex = i;
+                    break;
+                }
+            }
+            bookName.value=''
+            authorName.value=''
+            bookDesc.value=''
+            bookImgUrl.value=''
+            publicationYear.value=''
+            bookType.value=''
+            isNew.checked=false
+            
+        }
+    }
+    
+    function addAboutDataToDb(){
+        if(aboutTitle.value!=='' || aboutImgUrl.value!=='' || aboutDescription.value!==''){
+            let aboutData={
+                title:aboutTitle.value,
+                aboutImage:aboutImgUrl.value,
+                aboutDesc:aboutDescription.value
+            }
+            set(ref(db, 'about'), aboutData);
+            aboutTitle.value=''
+            aboutImgUrl.value=''
+            aboutDescription.value=''
+
+        }
+    }
+    // function readData(collection){
+    //     const pathRef=ref(db,collection)
+    //     onValue(pathRef,(snapshot)=>{
+    //         const data = snapshot.val()
+    //         const dataArr= Object.values(data)
+    //         console.log(dataArr);
+    //         return dataArr
+    //     })
+    // }
+    window.addEventListener('load', function() {
+        const booksRef=ref(db,'books')
+        onValue(booksRef,(snapshot)=>{
+            const data = snapshot.val()
+            const dataArr= Object.values(data)
+            booksTb.innerHTML=''
+            dataArr?.forEach((tItem,index)=>{
+            const booksTr=document.createElement('tr')
+            booksTr.classList.add('booksTr');
+            booksTr.innerHTML=
+            `
+            <td class="booksId">${index+1}</td>
+            <td class="bookTitle"><img src='${tItem.bookImage}' width="27px" height="36px" alt=""><p>${tItem.title}</p></td>
+            <td class="booksDescription">${tItem.description}</td>
+            <td class="booksCategory">${tItem.category}</td>
+            <td class="booksCategory">${tItem.author}</td>
+            `
+            booksTb.appendChild(booksTr)
+        })
+        })
+        const joinRef=ref(db,'Join')
+        onValue(joinRef,(snapshot)=>{
+            const data = snapshot?.val()
+            const dataArr= Object.values(data)
+            joinTb.innerHTML=''
+            dataArr?.forEach((tItem,index)=>{
+                const joinTr=document.createElement('tr')
+                joinTr.classList.add('joinTr');
+                joinTr.innerHTML=`
+                <td class="joinId">${index+1}</td>
+                <td class="joinName">${tItem.fullName}</td>
+                <td class="joinMail">${tItem.email}</td>
+            `
+            joinTb.appendChild(joinTr)
+            })
+            
+        })
+        const contactRef=ref(db,'contact')
+        onValue(contactRef,(snapshot)=>{
+            const data = snapshot?.val()
+            const dataArr= Object.values(data)
+            contactTb.innerHTML=''
+            dataArr?.forEach((tItem,index)=>{
+                const contactTr=document.createElement('tr')
+                contactTr.classList.add('contactTr');
+                contactTr.innerHTML=`
+                    <td class="contactId">${index + 1}</td>
+                    <td class="contactName">${tItem.fullName}</td>
+                    <td class="contactAddress">${tItem.adress}</td>
+                    <td class="contactMail">${tItem.email}</td>
+                    <td class="contactPhone">${tItem.phone}</td>
+                `
+                contactTb.appendChild(contactTr)
+            })
+        })
+
+        const catalogRef=ref(db,'category')
+        onValue(catalogRef,(snapshot)=>{
+            const data = snapshot.val()
+            const dataArr= Object.values(data)
+            typeSelection.innerHTML=''
+            typeSelection.innerHTML = `<option value="none">none</option>`
+            dataArr?.forEach((tItem)=>{
+              typeSelection.innerHTML+=`<option value="${tItem}">${tItem}</option>`
+            })
+            
+        })
+        
+    })
+    
+
+</script>
+<script src="../js/admin.js">
+</script>
+</html>
